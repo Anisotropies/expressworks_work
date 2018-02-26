@@ -1,0 +1,15 @@
+var express = require('express')
+var app = express()
+app.get('/search',function(req,res){
+var queryObj = {};
+for (var propName in req.query) {
+	queryObj.propName = req.query[propName];
+}
+res.send(queryObj);
+	
+
+})
+app.listen(process.argv[2])
+
+
+
